@@ -1,0 +1,16 @@
+# Uncomment this line to define a global platform for your project
+
+platform :ios, '9.0'
+use_frameworks!
+
+target 'WeatherForecast' do
+   pod 'SDWebImage'
+end
+
+target 'WeatherForecastTests' do
+   pod 'SDWebImage'
+end
+
+target 'WeatherForecastUITests' do
+   pod 'SDWebImage'
+end

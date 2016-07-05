@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7eY-MT-hcR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ListViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="74" sectionHeaderHeight="31" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="oJN-MP-J21">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oJN-MP-J21" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="VH7-jr-zci"/>
+                            <constraint firstItem="oJN-MP-J21" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="ho1-GX-cqg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oJN-MP-J21" secondAttribute="trailing" constant="-20" id="vMz-vk-V3J"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oJN-MP-J21" secondAttribute="bottom" id="yEh-4d-60V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nfi-kv-eeC">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="rPd-yN-ZMv">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="a8t-F4-2Hw" kind="presentation" id="Mch-pN-79X"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="done" systemItem="compose" id="2qW-S6-h62">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="currentCityButton:" destination="BYZ-38-t0r" id="FcM-YY-ntT"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="listTableView" destination="oJN-MP-J21" id="h2S-r1-kGQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="-200"/>
+        </scene>
+        <!--Add City View Controller-->
+        <scene sceneID="WV0-BG-G7T">
+            <objects>
+                <viewController id="a8t-F4-2Hw" customClass="AddCityViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iwh-1b-awN"/>
+                        <viewControllerLayoutGuide type="bottom" id="6GM-fj-pR8"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.59999999999999998" contentMode="scaleToFill" id="Uak-y2-A39">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsV-Hp-RcO" userLabel="ContainerView">
+                                <rect key="frame" x="130" y="230" width="340" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-Bh-YRq">
+                                        <rect key="frame" x="10" y="57" width="80" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9so-m5-vdJ">
+                                        <rect key="frame" x="90" y="53" width="240" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsD-Ec-Ovl">
+                                        <rect key="frame" x="308" y="0.0" width="32" height="32"/>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeButton:" destination="a8t-F4-2Hw" eventType="touchUpInside" id="9sg-Oy-Gzp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muc-l2-CmW">
+                                        <rect key="frame" x="126" y="100" width="88" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Add City">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addButton:" destination="a8t-F4-2Hw" eventType="touchUpInside" id="cZd-LE-6RY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="YGS-JK-3JL"/>
+                                    <constraint firstAttribute="width" constant="340" id="l8x-vl-rvO"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ff6-U6-Ncw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dsV-Hp-RcO" firstAttribute="centerY" secondItem="Uak-y2-A39" secondAttribute="centerY" id="DBd-MZ-Vxd"/>
+                            <constraint firstItem="dsV-Hp-RcO" firstAttribute="centerX" secondItem="Uak-y2-A39" secondAttribute="centerX" id="Tkm-oK-Pgv"/>
+                            <constraint firstItem="Ff6-U6-Ncw" firstAttribute="top" secondItem="Uak-y2-A39" secondAttribute="topMargin" id="Uh0-94-UMJ"/>
+                            <constraint firstItem="Ff6-U6-Ncw" firstAttribute="leading" secondItem="Uak-y2-A39" secondAttribute="leadingMargin" constant="-20" id="WaD-NW-7ZK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ff6-U6-Ncw" secondAttribute="trailing" constant="-20" id="es1-dA-by1"/>
+                            <constraint firstItem="6GM-fj-pR8" firstAttribute="top" secondItem="Ff6-U6-Ncw" secondAttribute="bottom" id="fFh-nB-2W1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="muc-l2-CmW" id="Mm5-Jc-q54"/>
+                        <outlet property="cityTextFeild" destination="9so-m5-vdJ" id="Dfh-y4-l6B"/>
+                        <outlet property="closeButton" destination="KsD-Ec-Ovl" id="4yB-Bk-agn"/>
+                        <outlet property="containerView" destination="dsV-Hp-RcO" id="heM-qM-dFm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwl-on-3qZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="-200"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bvB-Om-HyY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7eY-MT-hcR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LiE-6D-LGr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17254901959999999" green="0.22352941179999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DIR-4b-Sn2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Loa-Kb-CZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="-200"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="32" height="32"/>
+    </resources>
+</document>
